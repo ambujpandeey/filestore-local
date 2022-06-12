@@ -62,4 +62,5 @@ public class FileController {
 	}
 
 	// localhost:8080/images/abc.png
+	// end of controller
 }
