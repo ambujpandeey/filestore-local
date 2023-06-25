@@ -1,6 +1,5 @@
 package com.file.Controller;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -51,12 +50,14 @@ public class FileController {
 	}
 
 	// method to serve file
-	@GetMapping(value = "/images/{imageName}", produces = MediaType.IMAGE_JPEG_VALUE )
-	public void downloadImage(@PathVariable("imageName") String imageName, HttpServletResponse response) throws IOException {
-		
-		InputStream resource =  this.fileService.getImage(path, imageName);
-// InputStream resource =  this.fileService.getResource(path, imageName); // we write this one
-		
+	@GetMapping(value = "/images/{imageName}", produces = MediaType.IMAGE_JPEG_VALUE)
+	public void downloadImage(@PathVariable("imageName") String imageName, HttpServletResponse response)
+			throws IOException {
+
+		InputStream resource = this.fileService.getImage(path, imageName);
+		// InputStream resource = this.fileService.getResource(path, imageName); // we
+		// write this one
+
 		response.setContentType(MediaType.IMAGE_JPEG_VALUE);
 		StreamUtils.copy(resource, response.getOutputStream());
 	}

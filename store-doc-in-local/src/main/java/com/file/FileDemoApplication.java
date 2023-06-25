@@ -9,7 +9,7 @@ public class FileDemoApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(FileDemoApplication.class, args);
 		
-		// don't to anything here
+		// don't do anything here
 		// do coding only in another package level class
 		
 	}
